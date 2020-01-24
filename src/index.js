@@ -8,6 +8,14 @@ import bxBriefcaseAlt from '@iconify/icons-bx/bx-briefcase-alt';
 import bxPhone from '@iconify/icons-bx/bx-phone';
 import bxEnvelope from '@iconify/icons-bx/bx-envelope';
 import bxShow from '@iconify/icons-bx/bx-show';
+import bxBriefcase from '@iconify/icons-bx/bx-briefcase';
+import bxBoltCircle from '@iconify/icons-bx/bx-bolt-circle';
+import bxCalendar from '@iconify/icons-bx/bx-calendar';
+import bxsCertification from '@iconify/icons-bx/bxs-certification';
+import bxlGithub from '@iconify/icons-bx/bxl-github';
+import bxlLinkedinSquare from '@iconify/icons-bx/bxl-linkedin-square';
+
+
 
 
 class CV extends React.Component {
@@ -15,6 +23,7 @@ class CV extends React.Component {
         return(
             <div className="w3-row-padding">
                 <LeftColumn />
+                <RightColumn />
             </div>
         );
     }
@@ -40,7 +49,7 @@ class LeftColPhoto extends React.Component {
             <div className="w3-display-container">
                 <img src={photo} alt="Avatar" style={{width: "100%"}}/>
                 <div className="w3-display-bottomleft w3-container w3-text-black">
-                    <h2>Thisara Wijesundera</h2>
+                    <h2 className="w3-text-white">Thisara Wijesundera</h2>
                 </div>
             </div>
         );
@@ -134,6 +143,62 @@ class LeftColSkills extends React.Component {
                     >
                     25%
                     </div>
+                </div><br />
+            </div>
+        );
+    }
+}
+
+class RightColumn extends React.Component {
+    render() {
+        return (
+            <div className="w3-twothird">
+                <div className="w3-container w3-card w3-white w3-margin-bottom">
+                    <h2
+                        className="w3-text-grey w3-padding-16"
+                    >
+                        <InlineIcon icon={bxBriefcase} 
+                        className="w3-xxlarge w3-text-purple w3-margin-right" />
+                        Work Experience
+                    </h2>
+                    <WorkContent />
+                </div>
+                <div className="w3-container w3-card w3-white w3-margin-bottom">
+                    <h2
+                        className="w3-text-grey w3-padding-16"
+                    >
+                        <InlineIcon icon={bxsCertification}
+                        className="w3-xxlarge w3-text-purple w3-margin-right" />
+                        Education
+                    </h2>
+                    <EducationContent />
+                </div>
+                <div className="w3-container w3-card w3-white w3-margin-bottom">
+                    <h2
+                        className="w3-text-grey w3-padding-16"
+                    >
+                        <InlineIcon icon={bxBoltCircle}
+                        className="w3-xxlarge w3-text-purple w3-margin-right" />
+                        Side Projects
+                    </h2>
+                </div>
+                <div className="w3-container w3-card w3-white w3-margin-bottom">
+                    <h2
+                        className="w3-text-grey w3-padding-16"
+                    >
+                        <InlineIcon icon={bxBoltCircle}
+                        className="w3-xxlarge w3-text-purple w3-margin-right" />
+                        Volunteering
+                    </h2>
+                </div>
+                <div className="w3-container w3-card w3-white w3-margin-bottom">
+                    <h2
+                        className="w3-text-grey w3-padding-16"
+                    >
+                        <InlineIcon icon={bxBoltCircle}
+                        className="w3-xxlarge w3-text-purple w3-margin-right" />
+                        Freetime
+                    </h2>
                 </div>
             </div>
         );
@@ -141,6 +206,67 @@ class LeftColSkills extends React.Component {
 }
 
 
+class WorkContent extends React.Component {
+    render() {
+        return (
+            <div>
+                <div className="w3-container">
+                    <h5 className="w3-opacity"><b>Software Test Engineer Co-Op / Harman International</b></h5>
+                    <h6
+                        className="w3-text-purple"
+                    >
+                        <InlineIcon icon={bxCalendar} 
+                        className="w3-text-purple w3-large w3-margin-right" />
+                        2016 - 2019
+                    </h6>
+                    <p>Fill in work Experience here</p>
+                    <hr></hr>
+                </div>
+                <div className="w3-container">
+                    <h5 className="w3-opacity"><b>Software/Harware Technician Apprentice / Filestable</b></h5>
+                        <h6
+                            className="w3-text-purple"
+                        >
+                            <InlineIcon icon={bxCalendar} 
+                            className="w3-text-purple w3-large w3-margin-right" />
+                            2013 - 2015
+                        </h6>
+                        <p>Fill in work Experience here</p>
+                </div>
+            </div>
+        );
+    }
+}
 
+class EducationContent extends React.Component {
+    render() {
+        return (
+            <div className="w3-container">
+                <h5 className="w3-opacity"><b>Kettering University</b></h5>
+                <h6
+                    className="w3-text-purple"
+                >
+                    <InlineIcon icon={bxCalendar} 
+                    className="w3-text-purple w3-large w3-margin-right" />
+                    2015 - 2020
+                </h6>
+                <p>Bachelor's in Computer Science</p>
+            </div>
+        );
+    }
+}
+
+class FooterContent extends React.Component {
+    render() {
+        return (
+            <footer className="w3-container w3-purple w3-center w3-margin-top">
+                <p>Find me on social media</p>
+                <InlineIcon icon={bxlGithub} className="w3-hover-opacity w3-txt-white w3-xlarge" />
+                <a href="https://www.google.com"><InlineIcon icon={bxlLinkedinSquare} className="w3-hover-opacity w3-txt-white w3-xlarge"/></a>
+            </footer>
+        );
+    }
+}
 
 ReactDOM.render(<CV />, document.getElementById('root'));
+ReactDOM.render(<FooterContent />, document.getElementById("foot"))
